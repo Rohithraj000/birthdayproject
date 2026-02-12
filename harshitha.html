@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hashikaaa🌸</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+ font-family:'Baloo 2',cursive;
+ background: linear-gradient(135deg,#ffd6ec,#ffe5b4,#d0f4ff,#e4c1ff);
+ background-size:400% 400%;
+ animation:bg 12s infinite alternate;
+ height:100vh;
+ overflow:hidden;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%}
+100%{background-position:100% 50%}
+}
+
+.page{
+ position:absolute;
+ top:0;left:0;
+ width:100%;height:100%;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ text-align:center;
+ opacity:0;
+ transform:scale(.9);
+ transition:.6s;
+ pointer-events:none;
+}
+
+.active{
+ opacity:1;
+ transform:scale(1);
+ pointer-events:auto;
+}
+
+h1{
+ font-family:'Pacifico',cursive;
+ font-size:2.6em;
+ color:#ff4da6;
+}
+
+p{font-size:1.1em;color:#555;margin-top:8px}
+
+/* main buttons */
+button{
+ padding:14px 32px;
+ border:none;
+ border-radius:30px;
+ background:#ff66b3;
+ color:white;
+ font-size:1.05em;
+ cursor:pointer;
+ margin-top:22px;
+ box-shadow:0 0 18px #ffc1e3;
+ transition:.3s;
+}
+button:hover{transform:scale(1.1)}
+
+/* small back button top corner */
+.backBtn{
+ position:absolute;
+ top:18px;
+ left:18px;
+ padding:6px 14px;
+ font-size:.8em;
+ border-radius:20px;
+ background:rgba(255,255,255,0.7);
+ color:#ff4da6;
+ box-shadow:0 0 10px rgba(0,0,0,.15);
+}
+.backBtn:hover{
+ transform:scale(1.1);
+ background:white;
+}
+
+/* gallery */
+.gallery{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:16px;
+ margin-top:25px;
+}
+.gallery img{
+ width:150px;
+ height:150px;
+ object-fit:cover;
+ border-radius:20px;
+ box-shadow:0 0 15px #fff;
+ transition:.3s;
+}
+.gallery img:hover{transform:scale(1.15)}
+
+/* spotify */
+.spotifyBox{
+ margin-top:20px;
+ background:#121212;
+ padding:25px;
+ border-radius:20px;
+ box-shadow:0 10px 40px rgba(0,0,0,.4);
+}
+.spotifyTitle{color:#1db954;margin-bottom:12px}
+
+/* floating hearts */
+.heart{
+ position:absolute;
+ font-size:16px;
+ animation:float 7s linear infinite;
+}
+@keyframes float{
+0%{transform:translateY(100vh);opacity:0}
+50%{opacity:1}
+100%{transform:translateY(-10vh);opacity:0}
+}
+</style>
+</head>
+
+<body>
+
+<script>
+/* floating hearts */
+for(let i=0;i<25;i++){
+ let h=document.createElement("div");
+ h.innerHTML="💗";
+ h.className="heart";
+ h.style.left=Math.random()*100+"vw";
+ h.style.animationDuration=(Math.random()*4+5)+"s";
+ document.body.appendChild(h);
+}
+</script>
+
+<!-- PAGE 1 -->
+<div class="page active" id="p1">
+<h1>Hii sunshine 💗 </h1>
+<p> Anything and everything for my love 🪄</p>
+<button onclick="next(1)"> enter </button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="p2">
+<button class="backBtn" onclick="back(2)">←</button>
+<h1> our snaps aren't cute ? 👉👈</h1>
+
+<div class="gallery">
+ <img src="./IMG1.jpeg" alt="">
+ <img src="./IMG4.jpeg" alt="">
+ <img src="./IMG2.jpeg" alt="">
+ <img src="./IMG8.jpeg" alt="">
+ <img src="./IMG5.jpeg" alt="">
+ <img src="./IMG6.jpeg" alt="">
+ <img src="./IMG7.jpeg" alt="">
+ <img src="./IMG9.jpeg" alt="">
+ 
+
+</div>
+
+<button onclick="next(2)">Next</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="p3">
+<button class="backBtn" onclick="back(3)">←</button>
+<h1>This song is for my baby doll 💓</h1>
+
+<div class="spotifyBox">
+<div class="spotifyTitle">Now playing</div>
+<iframe style="border-radius:12px"
+src="https://open.spotify.com/embed/track/7xnSWKXH8XVc8vML9132SZ"
+width="300" height="80"
+frameborder="0"
+allowfullscreen=""
+allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+</iframe>
+
+</div>
+
+<button onclick="next(3)">Next</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="p4">
+<button class="backBtn" onclick="back(4)">←</button>
+<h1> You are forever mama's princess🎀</h1>
+
+<div style="
+ width:560px;
+ max-width:92%;
+ height:320px;
+ background:rgba(255,255,255,0.35);
+ border-radius:30px;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ box-shadow:0 15px 50px rgba(0,0,0,.25);
+ margin-top:20px;">
+<video autoplay loop muted style="
+ width:95%;
+ height:90%;
+ object-fit:cover;
+ border-radius:25px;">
+<source src="./VID1.mp4" type="video/mp4">
+</video>
+</div>
+
+<button onclick="next(4)">Continue</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="p5">
+<button class="backBtn" onclick="back(5)">←</button>
+<h1> will you be valentine ? 💘</h1>
+<button onclick="yesLove()">Yes</button>
+<button id="noBtn" onmouseover="moveNo()">No</button>
+</div>
+
+<!-- FINAL PAGE BIG GIF -->
+<div class="page" id="p6">
+<button class="backBtn" onclick="back(6)">←</button>
+
+<h1>This is for my hashikaaa🌸</h1>
+
+<!-- BIG aesthetic gif -->
+<img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
+style="
+width:420px;
+max-width:92%;
+margin-top:25px;
+border-radius:30px;
+box-shadow:0 25px 70px rgba(0,0,0,.35);
+">
+
+<p style="margin-top:18px;font-size:1.25em;">
+you deserve only princess treatment ✨
+</p>
+
+</div>
+
+<script>
+function next(n){
+ document.getElementById("p"+n).classList.remove("active");
+ document.getElementById("p"+(n+1)).classList.add("active");
+}
+
+function back(n){
+ document.getElementById("p"+n).classList.remove("active");
+ document.getElementById("p"+(n-1)).classList.add("active");
+}
+
+function moveNo(){
+ let btn=document.getElementById("noBtn");
+ btn.style.position="absolute";
+ btn.style.left=Math.random()*80+"vw";
+ btn.style.top=Math.random()*80+"vh";
+}
+
+function yesLove(){
+ document.getElementById("p5").classList.remove("active");
+ document.getElementById("p6").classList.add("active");
+}
+</script>
+
+</body>
+</html>
